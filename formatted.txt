@@ -1,0 +1,27 @@
+d
+	8:announce		33:http://192.168.1.17:9000/announce
+	10:created by		18:qBittorrent v5.1.4
+	13:creation date	i1768735040e
+	4:info
+		d
+			9:file tree
+			d
+				8:test.txt
+				d
+					0:
+					d
+						6:length	i11e
+						11:pieces root32:ŒĞ:_ù*xÏÃfÁ?±#ë)ÁÊ7ÇñB][BM
+					e
+				e
+			e
+			6:length	i11e
+			12:meta version	i2e
+			4:name		8:test.txt
+			12:piece length	i16384e
+			6:pieces	20:çPšŒ/;Â¨ßôvøïCa…úe
+			12:piece layers
+			d
+			e
+		e
+e
