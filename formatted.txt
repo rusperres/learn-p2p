@@ -19,7 +19,7 @@ d
 			12:meta version	i2e
 			4:name		8:test.txt
 			12:piece length	i16384e
-			6:pieces	20:çPšŒ/;Â¨ßôvøïCa…úe
+			6:pieces	20:PšŒ/;Â¨ßôvøïCa…úe
 			12:piece layers
 			d
 			e
