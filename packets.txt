@@ -1,0 +1,200 @@
+No.     Time           Source                Destination           Protocol Length Info
+     95 15.015131042   192.168.1.2           192.168.1.8           TCP      74     40287 → 46140 [SYN] Seq=0 Win=65535 Len=0 MSS=1460 SACK_PERM TSval=252750368 TSecr=0 WS=256
+
+Frame 95: Packet, 74 bytes on wire (592 bits), 74 bytes captured (592 bits) on interface wlan0, id 0
+Ethernet II, Src: 86:a3:a1:b2:66:a7 (86:a3:a1:b2:66:a7), Dst: Intel_e6:57:53 (7c:70:db:e6:57:53)
+Internet Protocol Version 4, Src: 192.168.1.2, Dst: 192.168.1.8
+Transmission Control Protocol, Src Port: 40287, Dst Port: 46140, Seq: 0, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     96 15.015158597   192.168.1.8           192.168.1.2           TCP      74     46140 → 40287 [SYN, ACK] Seq=0 Ack=1 Win=65160 Len=0 MSS=1460 SACK_PERM TSval=1042033188 TSecr=252750368 WS=1024
+
+Frame 96: Packet, 74 bytes on wire (592 bits), 74 bytes captured (592 bits) on interface wlan0, id 0
+Ethernet II, Src: Intel_e6:57:53 (7c:70:db:e6:57:53), Dst: 86:a3:a1:b2:66:a7 (86:a3:a1:b2:66:a7)
+Internet Protocol Version 4, Src: 192.168.1.8, Dst: 192.168.1.2
+Transmission Control Protocol, Src Port: 46140, Dst Port: 40287, Seq: 0, Ack: 1, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     97 15.020905746   192.168.1.2           192.168.1.8           TCP      66     40287 → 46140 [ACK] Seq=1 Ack=1 Win=65536 Len=0 TSval=252750372 TSecr=1042033188
+
+Frame 97: Packet, 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface wlan0, id 0
+Ethernet II, Src: 86:a3:a1:b2:66:a7 (86:a3:a1:b2:66:a7), Dst: Intel_e6:57:53 (7c:70:db:e6:57:53)
+Internet Protocol Version 4, Src: 192.168.1.2, Dst: 192.168.1.8
+Transmission Control Protocol, Src Port: 40287, Dst Port: 46140, Seq: 1, Ack: 1, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     99 15.025882471   192.168.1.2           192.168.1.8           BitTorrent 134    Handshake  
+
+Frame 99: Packet, 134 bytes on wire (1072 bits), 134 bytes captured (1072 bits) on interface wlan0, id 0
+Ethernet II, Src: 86:a3:a1:b2:66:a7 (86:a3:a1:b2:66:a7), Dst: Intel_e6:57:53 (7c:70:db:e6:57:53)
+Internet Protocol Version 4, Src: 192.168.1.2, Dst: 192.168.1.8
+Transmission Control Protocol, Src Port: 40287, Dst Port: 46140, Seq: 1, Ack: 1, Len: 68
+BitTorrent
+    Protocol Name Length: 19
+    Protocol Name: BitTorrent protocol
+    Reserved Extension Bytes: 0000000000180005
+    SHA1 Hash of info dictionary: 9f0474ebdf23a398581ae81d936472e71d0d96da
+    Peer ID: 2d5554383333302d2d795a4d615835715a634c70
+
+No.     Time           Source                Destination           Protocol Length Info
+    100 15.025902611   192.168.1.8           192.168.1.2           TCP      66     46140 → 40287 [ACK] Seq=1 Ack=69 Win=65536 Len=0 TSval=1042033198 TSecr=252750378
+
+Frame 100: Packet, 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface wlan0, id 0
+Ethernet II, Src: Intel_e6:57:53 (7c:70:db:e6:57:53), Dst: 86:a3:a1:b2:66:a7 (86:a3:a1:b2:66:a7)
+Internet Protocol Version 4, Src: 192.168.1.8, Dst: 192.168.1.2
+Transmission Control Protocol, Src Port: 46140, Dst Port: 40287, Seq: 1, Ack: 69, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+    101 15.025981377   192.168.1.8           192.168.1.2           BitTorrent 366    Handshake  Extended  Have All  Port  Unchoke  
+
+Frame 101: Packet, 366 bytes on wire (2928 bits), 366 bytes captured (2928 bits) on interface wlan0, id 0
+Ethernet II, Src: Intel_e6:57:53 (7c:70:db:e6:57:53), Dst: 86:a3:a1:b2:66:a7 (86:a3:a1:b2:66:a7)
+Internet Protocol Version 4, Src: 192.168.1.8, Dst: 192.168.1.2
+Transmission Control Protocol, Src Port: 46140, Dst Port: 40287, Seq: 1, Ack: 69, Len: 300
+BitTorrent
+    Protocol Name Length: 19
+    Protocol Name: BitTorrent protocol
+    Reserved Extension Bytes: 0000000000100015
+    SHA1 Hash of info dictionary: 9f0474ebdf23a398581ae81d936472e71d0d96da
+    Peer ID: 2d7142353134302d21716467514c715836537641
+BitTorrent
+    Message: Len:211, Extended
+        Message Length: 211
+        Message Type: Extended (20)
+        Extended Message ID: 0
+        Dictionary
+BitTorrent
+    Message: Len:1, Have All
+        Message Length: 1
+        Message Type: Have All (14)
+BitTorrent
+    Message: Len:3, Port
+        Message Length: 3
+        Message Type: Port (9)
+        Port: 46140
+BitTorrent
+    Message: Len:1, Unchoke
+        Message Length: 1
+        Message Type: Unchoke (1)
+
+No.     Time           Source                Destination           Protocol Length Info
+    103 15.028316479   192.168.1.2           192.168.1.8           TCP      66     40287 → 46140 [ACK] Seq=69 Ack=301 Win=66816 Len=0 TSval=252750381 TSecr=1042033198
+
+Frame 103: Packet, 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface wlan0, id 0
+Ethernet II, Src: 86:a3:a1:b2:66:a7 (86:a3:a1:b2:66:a7), Dst: Intel_e6:57:53 (7c:70:db:e6:57:53)
+Internet Protocol Version 4, Src: 192.168.1.2, Dst: 192.168.1.8
+Transmission Control Protocol, Src Port: 40287, Dst Port: 46140, Seq: 69, Ack: 301, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+    107 15.032636618   192.168.1.2           192.168.1.8           BitTorrent 301    Extended  Have None  Interested  Request, Piece (Idx:0x0,Begin:0x0,Len:0x15)  
+
+Frame 107: Packet, 301 bytes on wire (2408 bits), 301 bytes captured (2408 bits) on interface wlan0, id 0
+Ethernet II, Src: 86:a3:a1:b2:66:a7 (86:a3:a1:b2:66:a7), Dst: Intel_e6:57:53 (7c:70:db:e6:57:53)
+Internet Protocol Version 4, Src: 192.168.1.2, Dst: 192.168.1.8
+Transmission Control Protocol, Src Port: 40287, Dst Port: 46140, Seq: 69, Ack: 301, Len: 235
+BitTorrent
+    Message: Len:204, Extended
+        Message Length: 204
+        Message Type: Extended (20)
+        Extended Message ID: 0
+        Dictionary
+BitTorrent
+    Message: Len:1, Have None
+        Message Length: 1
+        Message Type: Have None (15)
+BitTorrent
+    Message: Len:1, Interested
+        Message Length: 1
+        Message Type: Interested (2)
+BitTorrent
+    Message: Len:13, Request, Piece (Idx:0x0,Begin:0x0,Len:0x15)
+        Message Length: 13
+        Message Type: Request (6)
+        Piece index: 0x00000000
+        Begin offset of piece: 0x00000000
+        Piece Length: 0x00000015
+
+No.     Time           Source                Destination           Protocol Length Info
+    108 15.032758897   192.168.1.8           192.168.1.2           BitTorrent 80     Allowed Fast, Piece (Idx:0x0)  Unchoke  
+
+Frame 108: Packet, 80 bytes on wire (640 bits), 80 bytes captured (640 bits) on interface wlan0, id 0
+Ethernet II, Src: Intel_e6:57:53 (7c:70:db:e6:57:53), Dst: 86:a3:a1:b2:66:a7 (86:a3:a1:b2:66:a7)
+Internet Protocol Version 4, Src: 192.168.1.8, Dst: 192.168.1.2
+Transmission Control Protocol, Src Port: 46140, Dst Port: 40287, Seq: 301, Ack: 304, Len: 14
+BitTorrent
+    Message: Len:5, Allowed Fast, Piece (Idx:0x0)
+        Message Length: 5
+        Message Type: Allowed Fast (17)
+        Piece index: 0x00000000
+BitTorrent
+    Message: Len:1, Unchoke
+        Message Length: 1
+        Message Type: Unchoke (1)
+
+No.     Time           Source                Destination           Protocol Length Info
+    112 15.075355674   192.168.1.2           192.168.1.8           TCP      66     40287 → 46140 [ACK] Seq=304 Ack=315 Win=66816 Len=0 TSval=252750428 TSecr=1042033205
+
+Frame 112: Packet, 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface wlan0, id 0
+Ethernet II, Src: 86:a3:a1:b2:66:a7 (86:a3:a1:b2:66:a7), Dst: Intel_e6:57:53 (7c:70:db:e6:57:53)
+Internet Protocol Version 4, Src: 192.168.1.2, Dst: 192.168.1.8
+Transmission Control Protocol, Src Port: 40287, Dst Port: 46140, Seq: 304, Ack: 315, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+    113 15.075396088   192.168.1.8           192.168.1.2           BitTorrent 100    Piece, Idx:0x0,Begin:0x0,Len:0x15  
+
+Frame 113: Packet, 100 bytes on wire (800 bits), 100 bytes captured (800 bits) on interface wlan0, id 0
+Ethernet II, Src: Intel_e6:57:53 (7c:70:db:e6:57:53), Dst: 86:a3:a1:b2:66:a7 (86:a3:a1:b2:66:a7)
+Internet Protocol Version 4, Src: 192.168.1.8, Dst: 192.168.1.2
+Transmission Control Protocol, Src Port: 46140, Dst Port: 40287, Seq: 315, Ack: 304, Len: 34
+BitTorrent
+    Message: Len:30, Piece, Idx:0x0,Begin:0x0,Len:0x15
+        Message Length: 30
+        Message Type: Piece (7)
+        Piece index: 0x00000000
+        Begin offset of piece: 0x00000000
+        Data in a piece: 68656c6c6f68656c6c6f68656c6c6f68656c6c6f0a
+
+No.     Time           Source                Destination           Protocol Length Info
+    114 15.080720059   192.168.1.2           192.168.1.8           TCP      66     40287 → 46140 [ACK] Seq=304 Ack=349 Win=66816 Len=0 TSval=252750430 TSecr=1042033248
+
+Frame 114: Packet, 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface wlan0, id 0
+Ethernet II, Src: 86:a3:a1:b2:66:a7 (86:a3:a1:b2:66:a7), Dst: Intel_e6:57:53 (7c:70:db:e6:57:53)
+Internet Protocol Version 4, Src: 192.168.1.2, Dst: 192.168.1.8
+Transmission Control Protocol, Src Port: 40287, Dst Port: 46140, Seq: 304, Ack: 349, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+    115 15.093255426   192.168.1.2           192.168.1.8           BitTorrent 75     Have, Piece (Idx:0x0)  
+
+Frame 115: Packet, 75 bytes on wire (600 bits), 75 bytes captured (600 bits) on interface wlan0, id 0
+Ethernet II, Src: 86:a3:a1:b2:66:a7 (86:a3:a1:b2:66:a7), Dst: Intel_e6:57:53 (7c:70:db:e6:57:53)
+Internet Protocol Version 4, Src: 192.168.1.2, Dst: 192.168.1.8
+Transmission Control Protocol, Src Port: 40287, Dst Port: 46140, Seq: 304, Ack: 349, Len: 9
+BitTorrent
+    Message: Len:5, Have, Piece (Idx:0x0)
+        Message Length: 5
+        Message Type: Have (4)
+        Piece index: 0x00000000
+
+No.     Time           Source                Destination           Protocol Length Info
+    116 15.093460802   192.168.1.8           192.168.1.2           TCP      66     46140 → 40287 [FIN, ACK] Seq=349 Ack=313 Win=65536 Len=0 TSval=1042033266 TSecr=252750445
+
+Frame 116: Packet, 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface wlan0, id 0
+Ethernet II, Src: Intel_e6:57:53 (7c:70:db:e6:57:53), Dst: 86:a3:a1:b2:66:a7 (86:a3:a1:b2:66:a7)
+Internet Protocol Version 4, Src: 192.168.1.8, Dst: 192.168.1.2
+Transmission Control Protocol, Src Port: 46140, Dst Port: 40287, Seq: 349, Ack: 313, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+    117 15.099575594   192.168.1.2           192.168.1.8           TCP      66     40287 → 46140 [FIN, ACK] Seq=313 Ack=350 Win=66816 Len=0 TSval=252750452 TSecr=1042033266
+
+Frame 117: Packet, 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface wlan0, id 0
+Ethernet II, Src: 86:a3:a1:b2:66:a7 (86:a3:a1:b2:66:a7), Dst: Intel_e6:57:53 (7c:70:db:e6:57:53)
+Internet Protocol Version 4, Src: 192.168.1.2, Dst: 192.168.1.8
+Transmission Control Protocol, Src Port: 40287, Dst Port: 46140, Seq: 313, Ack: 350, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+    118 15.099637383   192.168.1.8           192.168.1.2           TCP      66     46140 → 40287 [ACK] Seq=350 Ack=314 Win=65536 Len=0 TSval=1042033272 TSecr=252750452
+
+Frame 118: Packet, 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface wlan0, id 0
+Ethernet II, Src: Intel_e6:57:53 (7c:70:db:e6:57:53), Dst: 86:a3:a1:b2:66:a7 (86:a3:a1:b2:66:a7)
+Internet Protocol Version 4, Src: 192.168.1.8, Dst: 192.168.1.2
+Transmission Control Protocol, Src Port: 46140, Dst Port: 40287, Seq: 350, Ack: 314, Len: 0
