@@ -1,50 +1,31 @@
 #include <iostream>
-#include <stack>
-#include <vector>
+#include <libtorrent/bdecode.hpp>
 #include <string>
-#include <bits/stdc++.h>
+#include <fstream>
 int main()
-{	
-	std::string bytes = "d8:announce33:http://192.168.1.17:9000/announce10:created by18:qBittorrent v5.1.413:creation datei1768735040e4:infod9:file treed8:test.txtd0:d6:lengthi11e11:pieces root32:Ð⑿:_ù*xÏÃfÁ?±#ë)ÁÊ7ÇñB][BMeee6:lengthi11e12:meta versioni2e4:name8:test.txt12:piece lengthi16384e6:pieces20:çP␃/;Â¨ß␝ôvøï␃Caúe12:piece layersdeee";
-	int n =bytes.length();
-	
-	std::string temp ="";
-	std::stack<std::string> s;
-	bool open = false, close = true;
-	for ( char c: bytes ) 
-	{	
-		switch (c) 
-		{
-			case 'd':
-				if ( !open )
-				{
-					open = true;
-					close = false;
-				}
-				break;
-			case 'e':
-				if (!close )
-				{
-					open  = false;
-					close = true;
-				}
-				s.push(temp);
-				temp = "";
-				break;
-			default:
-				temp += c;
-		}
-	}
-	std::vector<std::string> items;
-	while ( !s.empty() ) 
+{
+	std::ifstream file("test.txt.torrent", std::ios::binary);
+	if ( !file) 
 	{
-		items.push_back(s.top());
-		s.pop();
-
+		std::cerr << "Failed to open file\n";
+		return 1;
 	}
-	std::reverse(items.begin(), items.end());
-	for ( std::string item : items )
-		std::cout << item << "\n";
-	return 0;
+	file.seekg(0, std::ios::end);
+	std::size_t size = file.tellg();
+	file.seekg(0, std::ios::beg);
+	
+	std::vector<char> buffer (size);
+	file.read(buffer.data(), size);
 
+	libtorrent::bdecode_node node;
+	libtorrent::error_code ec;
+	libtorrent::bdecode(buffer.data(), buffer.data() + buffer.size(), node, ec);
+	if ( ec )
+		std::cerr << ec.message() << "\n";
+	else 
+	{
+		std::cout << libtorrent::print_entry(node);
+	}
+	std::cout << "Read " << buffer.size() << " bytes\n";
+	return 0;
 }
