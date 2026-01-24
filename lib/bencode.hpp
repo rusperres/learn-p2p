@@ -6,7 +6,7 @@ struct bstream {
 		return *curr;
 	}
 	uint8_t next() { 
-		if ( curr == end ) throw std::runtime_error("EOF")
+		if ( curr == end ) throw std::runtime_error("EOF");
 		return *curr++; 
 	}
 	bstream(const std::vector<uint8_t>& bytes)
@@ -21,6 +21,8 @@ struct decoded{
 		list_t,
 		long,
 		std::vector<uint8_t>
+	>;
+
 	value_t value;
 };
 
@@ -33,18 +35,19 @@ class BEncode{
 	static constexpr uint8_t num_start = 'i';
 	static constexpr uint8_t num_end = 'e';
 	static constexpr uint8_t byte_array_divider = ':';
-
+	
+	public:
 	decoded decode(const std::vector<uint8_t>& bytes){
 		bstream stream(bytes);
 		return decode_next_obj(stream);		
 	}
-
+	private:
 	decoded decode_next_obj(bstream& stream){
 		if ( stream.curr == stream.end )
 			throw std::runtime_error("Unexpected end of output");
-		if( stream.peek() == dict_start) return decode_dict(stream.next());
-		if( stream.peek() == list_start) return decode_list(stream.next());
-		if( stream.peek() == num_start) return decode_num(stream.next());
+		if( stream.peek() == dict_start) return decode_dict(stream);
+		if( stream.peek() == list_start) return decode_list(stream);
+		if( stream.peek() == num_start) return decode_num(stream);
 		return decode_byte_array(stream);
 	}
 
