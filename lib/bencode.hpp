@@ -35,13 +35,13 @@ class BEncode{
 	static constexpr uint8_t num_start = 'i';
 	static constexpr uint8_t num_end = 'e';
 	static constexpr uint8_t byte_array_divider = ':';
-	
+
 	public:
 	decoded decode(const std::vector<uint8_t>& bytes){
 		bstream stream(bytes);
 		return decode_next_obj(stream);		
 	}
-	private:
+
 	decoded decode_next_obj(bstream& stream){
 		if ( stream.curr == stream.end )
 			throw std::runtime_error("Unexpected end of output");
