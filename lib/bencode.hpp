@@ -1,9 +1,16 @@
 struct bstream {
 	const uint8_t* curr;
 	const uint8_t* end;
-	uint8_t peek() { return *curr;}
-	uint8_t next() { return *curr++; }
-	bstream(const auto& bytes){ curr = bytes.begin(), end = bytes.end();}
+	uint8_t peek() { 
+		if ( curr == end ) throw std::runtime_error("EOF");
+		return *curr;
+	}
+	uint8_t next() { 
+		if ( curr == end ) throw std::runtime_error("EOF");
+		return *curr++; 
+	}
+	bstream(const std::vector<uint8_t>& bytes)
+		: curr(bytes.data()), end(bytes.data() + bytes.size()){}
 };
 class BEncode{
 	constexpr uint8_t dict_start = 'd';
