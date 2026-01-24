@@ -28,18 +28,18 @@ class BEncode{
 	constexpr uint8_t num_end = 'e';
 	constexpr uint8_t byte_array_divider = ':';
 
-	std::variant<std::orderered_set, std::vector, long int, std::vector<uint8_t>> decode(const auto& bytes){
+	decoded decode(const std::vector<uint8_t>& bytes){
 		bstream stream(bytes);
 		return decode_next_obj(stream);		
 	}
 
-	stdd::variant<std::orderered_set, std::vector, long int, std::vector<uint8_t> decode_next_obj(bstream enumerator){
-		if ( it == end )
+	decoded decode_next_obj(bstream& stream){
+		if ( stream.curr == stream.end )
 			throw std::runtime_error("Unexpected end of output");
-		if( *it == dict_start) return decode_dict(enumerator);
-		if( *it == list_start) return decode_list(enumerator);
-		if( *it == num_start) return decode_num(enumerator);
-		return decode_byte_array(enumerator);
+		if( stream.peek() == dict_start) return decode_dict(stream);
+		if( stream.peek() == list_start) return decode_list(stream);
+		if( stream.peek() == num_start) return decode_num(stream);
+		return decode_byte_array(stream);
 	}
 
 };
