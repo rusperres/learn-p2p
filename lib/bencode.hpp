@@ -1,9 +1,9 @@
 struct bstream {
 	const uint8_t* curr;
 	const uint8_t* end;
-	uint8_t peek() { return * cur;}
-	uint8_t next() { return *cur++; }
-	bstream(const auto& bytes){ *cur = bytes.begin(), *end = bytes.end();}
+	uint8_t peek() { return *curr;}
+	uint8_t next() { return *curr++; }
+	bstream(const auto& bytes){ curr = bytes.begin(), end = bytes.end();}
 };
 class BEncode{
 	constexpr uint8_t dict_start = 'd';
