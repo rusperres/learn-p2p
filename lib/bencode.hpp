@@ -9,8 +9,10 @@ class BEncode{
 
 	public:
 	
-	std::string decode(const std::string& str){
+	std::any decode(const std::vector<uint8_t>& bytes){
+		std::vector<uint8_t>::iterator it;
 		
+		return decode_next_object(it, bytes);		
 	}
 
 };
