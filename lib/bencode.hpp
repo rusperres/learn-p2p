@@ -6,12 +6,19 @@ struct bstream {
 		return *curr;
 	}
 	uint8_t next() { 
-		if ( curr == end ) throw std::runtime_error("EOF");
+		if ( curr == end ) throw std::runtime_error("EOF"
 		return *curr++; 
 	}
 	bstream(const std::vector<uint8_t>& bytes)
 		: curr(bytes.data()), end(bytes.data() + bytes.size()){}
 };
+using decoded = std::variant<
+	std::map<std::string, decoded>,
+	std::vector<decoded>
+	long,
+	std::vector<uint8_t>
+>;
+
 class BEncode{
 	constexpr uint8_t dict_start = 'd';
 	constexpr uint8_t dict_end = 'e';
@@ -22,8 +29,8 @@ class BEncode{
 	constexpr uint8_t byte_array_divider = ':';
 
 	std::variant<std::orderered_set, std::vector, long int, std::vector<uint8_t>> decode(const auto& bytes){
-		bstream enumerator = bstream(bytes);
-		return decode_next_obj(enumerator);		
+		bstream stream(bytes);
+		return decode_next_obj(stream);		
 	}
 
 	stdd::variant<std::orderered_set, std::vector, long int, std::vector<uint8_t> decode_next_obj(bstream enumerator){
