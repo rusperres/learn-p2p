@@ -1,3 +1,4 @@
+#include <bits/stdc++.h>
 struct bstream {
 	const uint8_t* curr;
 	const uint8_t* end;
@@ -50,5 +51,16 @@ class BEncode{
 		if( stream.peek() == num_start) return decode_num(stream);
 		return decode_byte_array(stream);
 	}
+	
+	decoded decode_file(std::string path){
+		std::ifstream f(path, std::ios::binary);
+		if ( !f ) 
+			throw std::runtime_error("Error opening file: " + path);
+		std::string bytes(
+			(std::istreambuf_iterator<char>(f)),
+			std::istreambuf_iterator<char>()
+		);
 
+		return BEncode.decode(bytes);
+	}
 };
