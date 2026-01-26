@@ -63,4 +63,15 @@ class BEncode{
 
 		return BEncode.decode(bytes);
 	}
+
+	long decode_number(bstream& stream){
+		std::string num_bytes;
+		while (	stream.next() ){
+			if ( stream.current == num_end ) break;
+			num_bytes += stream.curr();
+		}
+
+		return stoi(num_bytes);
+		
+	}
 };
