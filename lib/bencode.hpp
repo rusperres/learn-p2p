@@ -56,11 +56,11 @@ class BEncode{
 		std::ifstream f(path, std::ios::binary);
 		if ( !f ) 
 			throw std::runtime_error("Error opening file: " + path);
-		std::string bytes(
-			(std::istreambuf_iterator<char>(f)),
-			std::istreambuf_iterator<char>()
-		);
-
+		f.seekg(0, std::ios::end);
+		std::size_t size = f.tellg();
+		f.seekg(0, std::ios:beg);
+		std::vector<uint8_t> bytes(size);
+		f.read(reinterpret_cast<char*>(bytes.data()) ,size);
 		return BEncode.decode(bytes);
 	}
 
@@ -74,4 +74,6 @@ class BEncode{
 		return stoi(num_bytes);
 		
 	}
+
+	std::string decode_byte_array()
 };
