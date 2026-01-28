@@ -64,7 +64,7 @@ class BEncode{
 		return BEncode.decode(bytes);
 	}
 
-	long decode_number(bstream& stream){
+	decoded decode_number(bstream& stream){
 		std::string num_bytes;
 		while (	stream.next() ){
 			if ( stream.current == num_end ) break;
@@ -75,5 +75,25 @@ class BEncode{
 		
 	}
 
-	std::string decode_byte_array()
+	decoded decode_byte_array(bstream& stream){
+		std::vector<uint8_t> length_bytes;
+		do {
+			if ( stream.curr() == byte_array_divider) break;
+			length_bytes.push_back(stream.curr());	
+		} while ( stream.next() );
+		
+		std::string length_string(length_bytes.begin(), length_bytes.end());
+		int length;
+		try{
+			length = std::stoi(length_string);
+		} catch(...){
+			throw std::runtime_error('Parsing integer failed.');
+		}
+		std::vector<uint8_t> bytes(length);
+		for (int i = 0; i < length; i++){
+			stream.next();
+			bytes[i] = stream.curr();
+		}
+		return bytes;
+	}
 };
