@@ -96,4 +96,12 @@ class BEncode{
 		}
 		return bytes;
 	}
+
+	decoded decode_list(bstream& stream){
+		std::vector<decoded> list;
+		while(stream.next()){
+			if ( stream.curr() == list_end ) break;
+			list.push_back(decode_next_object(stream));
+		}
+	}
 };
